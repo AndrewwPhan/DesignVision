@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane prefHeight="677.0" prefWidth="1010.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cv.designvision.controllers.AccessibilityController">
+   <tabs>
+
+      <Tab closable="false" text="Name a colour">
+         <content>
+            <VBox alignment="TOP_CENTER" prefHeight="606.0" prefWidth="842.0" spacing="10" styleClass="preset-colors-panel">
+               <Label styleClass="preset-title" text="Select value to show closest named colour">
+                  <font>
+                     <Font size="24.0" />
+                  </font></Label>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="260.0">
+                  <children>
+                     <VBox alignment="TOP_CENTER">
+                        <children>
+                           <Label text="Chosen Value">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="chosenValueLbl" text="Colour RGB">
+                              <padding>
+                                 <Insets top="15.0" />
+                              </padding>
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <ColorPicker fx:id="valuePicker" editable="true" maxWidth="1.7976931348623157E308" onAction="#onColourValuePick" promptText="Choose Colour" visible="false" />
+                        </children>
+                        <padding>
+                           <Insets top="10.0" />
+                        </padding>
+                     </VBox>
+                     <VBox alignment="TOP_CENTER">
+                        <children>
+                           <Label fx:id="closestNameLbl" text="Colour Name">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="closestValueLbl" text="Colour RGB">
+                              <padding>
+                                 <Insets top="15.0" />
+                              </padding>
+                              <font>
+                                 <Font name="System Bold" size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                        <padding>
+                           <Insets top="10.0" />
+                        </padding>
+                     </VBox>
+                  </children>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </HBox>
+               <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                  <children>
+                     <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-color: lightGrey;">
+                        <children>
+                           <Rectangle fx:id="chosenColourPad" fill="WHITE" height="450.0" onMouseClicked="#chooseColourRectangleClick" strokeWidth="0.0" width="450.0" />
+                           <Rectangle fx:id="closestColourPad" fill="WHITE" height="450.0" strokeWidth="0.0" width="450.0" />
+                        </children>
+                     </HBox>
+                  </children>
+               </HBox>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

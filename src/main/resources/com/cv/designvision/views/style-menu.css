@@ -1,0 +1,17 @@
+
+.menuButton {
+    -fx-text-fill: black;
+    -fx-background-color: #A678FA;
+    -fx-background-radius: 20;
+}
+
+.menuButtonActive {
+    -fx-text-fill: white;
+    -fx-background-color: #7935F8;
+    -fx-background-radius: 20;
+}
+
+.menuButton:hover {
+    -fx-background-color: #D2BCFD;
+    -fx-background-radius: 20;
+}

@@ -1,0 +1,134 @@
+@startuml General
+
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+title Design Vision Layout Strategy
+left header Team CodeVision - QUT CAB302 2024 ......... last-updated 02/04/24 By RG
+legend top
+  All is work in progress (WIP)
+  Check with RG for clarification or suggestions
+end legend
+
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+package Views <<folder>> {
+
+    abstract Panel {
+        -parent: BoarderPane
+        -panel: Node
+        +Panel(parent: BoarderPane, viewPath: String)
+        -load(viewPath: String): Node
+        show(): void
+    }
+
+    class ExamplePanel extends Panel {
+        -VIEW_PATH: String
+        +ExamplePanel(parent: EventTarget)
+    }
+
+    annotation main_view as "main-view.fxml" {
+        **[WIP]**
+        root
+        `  Btn 1
+        `  Btn 2...
+        main panel: type?
+    }
+}
+
+
+package Controllers <<folder>> {
+
+    class MainController {
+        onMenuX(): void
+    }
+
+    class ExController
+
+}
+
+
+package Models <<folder>> {
+
+    class User {
+        -username : String
+        -password : String
+        -patchSet : ArrayList
+        +User(username, password)
+        +getUsername() : String
+        +setUsername() : String
+        +getPassword() : String
+        +setPassword() : String
+        +getPatchSet(int) : ArrayList
+    }
+
+    class Palette {
+        -colours: Array
+        -name: String
+        +getColours(): Array
+        +getName(): String
+    }
+
+    class PaletteSet {
+        -Palettes: ArrayList
+        +getPalettes(): ArrayList
+    }
+
+    PaletteSet "0..*" --* Palette
+
+    class MainModel {
+        -currentPalette: Palette
+        -currentPalletSet: PaletteSet
+    }
+
+    class ExModel
+
+}
+
+
+package Services <<folder>> {
+
+    interface IAuthenticationService {
+        signUp(String, String): User
+        logIn(String, String): User
+    }
+
+    class AuthenticationService implements IAuthenticationService{
+        - users: ArrayList
+        +AuthenticationService()
+        +signUp(username, password) : User
+        +logIn(username, password) : User
+    }
+
+    interface IPatchSetDAO {
+        +addPatch(Patch): void
+        +updatePatch(Patch): void
+        +deletePatch(Patch): void
+        +getPatch(id: int): Patch
+        +getAllPatches(): List<Patch>
+    }
+
+    class MockPatchSet implements IPatchSetDAO {
+        -patches: ArrayList<Patch>
+        -autoIncrementId: int
+        +addPatch(Patch): void
+        +updatePatch(Patch): void
+        +deletePatch(Patch): void
+        +getPatch(id: int): Patch
+        +getAllPatches(): List<Patch>
+    }
+
+    class PatchSetDB implements IPatchSetDAO {
+        [implement interface]
+        [attached to DB]
+    }
+
+}
+
+' Detailed Connections
+
+main_view -- MainController
+MainController -- MainModel
+ExamplePanel -- ExController
+ExController -- ExModel
+
+@enduml

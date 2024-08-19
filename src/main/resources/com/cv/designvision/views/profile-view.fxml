@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-background-color: #f0f0f0;"
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea"
+          fx:controller="com.cv.designvision.controllers.ProfileController">
+
+    <Label text="Enter New User Details and Click 'Update'"
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="0"
+           GridPane.columnSpan="2"
+           alignment="CENTER"
+           style="-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+    <!-- First Name -->
+    <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="userFirstNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <!-- Last Name -->
+    <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="userLastNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <!-- Email -->
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField fx:id="emailTextField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <!-- Password -->
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <!-- Role -->
+    <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Label fx:id="roleLabel" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+        <Button fx:id="updateButton" text="Update" onAction="#handleUpdateButton"/>
+        <Button fx:id="deleteButton" text="Delete" onAction="#handleDeleteButton"/>
+        <Button fx:id="logoutButton" text="Log Out" onAction="#handleLogoutButton"/>
+    </HBox>
+</GridPane>

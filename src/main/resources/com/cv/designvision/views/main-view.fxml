@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="panelContainer" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cv.designvision.controllers.MainController">
+   <left>
+      <AnchorPane maxWidth="-Infinity" prefHeight="600.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="121.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/DVLogo.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="TOP_CENTER" prefHeight="312.0" prefWidth="100.0" spacing="30.0" stylesheets="@style-menu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+               <children>
+                  <Button fx:id="menu1" minHeight="40.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="1.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="menu2" minHeight="40.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="2.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="menu3" minHeight="40.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="3.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="menu4" minHeight="40.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="4.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="menu5" minHeight="40.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="5.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="menu6" minHeight="40.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="6.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menu7" layoutX="25.0" layoutY="410.0" minHeight="60.0" minWidth="130.0" onAction="#onMenu" styleClass="menuButton" text="7.">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

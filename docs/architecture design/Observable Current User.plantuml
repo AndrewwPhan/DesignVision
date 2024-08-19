@@ -1,0 +1,62 @@
+@startuml General
+
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+title DesignVision CurrentUser Observers
+
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+package controllers/panels <<folder>> {
+
+    abstract Panel {
+        -parent: BoarderPane
+        -panel: Node
+        +Panel(viewPath: String)
+        -load(viewPath: String): Node
+        ~show(): void
+    }
+
+    class ConcretePanelImplmentations extends Panel {
+        -VIEW_PATH: String
+        +ConcretePanelImplmentations()
+        +show()
+    }
+}
+
+package services <<folder>> {
+    abstract Observable {
+        +register(observer: IObserver)
+        +unregister(observer: IObserver)
+        ~notifyObservers()
+    }
+
+    interface IObserver {
+        update(value:T)
+    }
+}
+
+package controllers <<folder>> {
+
+    class PanelController {
+        -user: IUser
+        otherControllerFields...
+        otherControllerMethods()...
+        +update(user:T)
+    }
+}
+
+IObserver <|.. PanelController
+
+package models <<folder>> {
+
+    class CurrentUser{
+        +getInstance()
+        +setUser(user: IUser)
+        +otherMethods()...
+        +notifyObservers()
+    }
+}
+
+Observable <|-- CurrentUser
+
+@enduml

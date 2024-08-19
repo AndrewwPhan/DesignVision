@@ -1,0 +1,37 @@
+.patch-editor {
+    -fx-padding: 10;
+}
+
+.editor-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.color-grid {
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-background-color: #fff;
+}
+
+.editor-button {
+    -fx-font-size: 14px;
+    -fx-background-color: #5cb85c;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #4cae4c;
+    -fx-border-radius: 5;
+    -fx-padding: 10 20;
+}
+
+.editor-button:hover {
+    -fx-background-color: #449d44;
+}
+
+.button-bar {
+    -fx-padding: 10;
+}
+
+.preset-color-patch {
+    -fx-margin: 5;
+}

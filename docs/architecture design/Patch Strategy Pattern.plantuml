@@ -1,0 +1,40 @@
+@startuml General
+
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+title Patch Strategy Pattern
+
+'''''''''''''''''''''''''''''''''''''''''''''''''
+interface IPatch {
+    getColours()
+    getEncoded()
+}
+
+class Patch implements IPatch{
+    +Patch(code: String)
+    getColours()
+    getEncoded()
+}
+
+class ViewPatch{
+    -patch: IPatch
+    +ViewPatch(patch, size)
+}
+
+class EditableViewPatch extends ViewPatch{
+    -colourPickers
+    +EditableViewPatch(patch, size)
+    -handleClick(event)
+    -handleColourPick(event)
+}
+
+class SelectableViewPatch extends ViewPatch{
+    -patchIdx
+    +SelectableViewPatch(patch, size, index)
+    +setHighlight(enable)
+    +getPatchIdx()
+}
+
+IPatch <--right ViewPatch
+
+@enduml
